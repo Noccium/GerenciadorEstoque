@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Cadastro Mantimento</h1>
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.nome.label }}<br>
+            {{ form.nome(size=20) }}
+        </p>
+        <p>
+          {% for error in form.nome.errors %}
+          <span style="color: red;">[{{ error }}]</span>
+          {% endfor %}
+        </p>
+        <p>
+            {{ form.descricao.label }}<br>
+            {{ form.descricao(value='-', size=120) }}
+        </p>
+        <p>
+            {% for error in form.descricao.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+      </p>
+        <p>
+            {{ form.quantidadeAtual.label }}<br>
+            {{ form.quantidadeAtual(vaule = '0', size = 20) }}
+        </p>
+        <p>
+            {% for error in form.quantidadeAtual.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.quantidadeMin.label }}<br>
+            {{ form.quantidadeMin(value=0, size=20) }}
+        </p>
+        <p>
+            {% for error in form.quantidadeMin.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.consumoDiario.label }}<br>
+            {{ form.consumoDiario(value=0, size=20) }}
+        </p>
+        <p>
+            {% for error in form.consumoDiario.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+{% endblock %}

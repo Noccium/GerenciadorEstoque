@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='table.css')}}">
+<h1>Visualizar Mantimentos</h1>
+  <table style="width=100%">
+    <tr>
+      <th> Nome </th>
+      <th> Descrição </th>
+      <th> Qtd. Atual </th>
+      <th> Qtd. Mínima </th>
+      <th> Consumo Diário </th>
+    </tr>
+  {% for item in mantimento %}
+    <tr>
+      <td>{{ item.nome }}</td>
+      <td>{{ item.descricao }}</td>
+      <td>{{ item.quantidadeAtual }}</td>
+      <td>{{ item.quantidadeMin }}</td>
+      <td>{{ item.consumoDiario }}</td>
+  {% endfor %}
+    </tr>
+  </table>
+{% endblock %}
