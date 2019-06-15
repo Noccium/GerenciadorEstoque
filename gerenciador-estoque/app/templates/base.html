@@ -10,15 +10,14 @@
         Navegar:
         <a href="{{ url_for('index') }}">Home</a></div>
         <a href="{{ url_for('cadastro') }}">Cadastro</a>
+        <a href="{{ url_for('atualizar') }}">Atualizar</a>
         <a href="{{ url_for('visualizar') }}">Visualizar</a>
         <hr>
         {% with messages = get_flashed_messages() %}
         {% if messages %}
-        <ul>
             {% for message in messages %}
-            <li>{{ message }}</li>
+            <li style="color: green;">{{ message }}</li>
             {% endfor %}
-        </ul>
         {% endif %}
         {% endwith %}
         {% block content %}{% endblock %}
